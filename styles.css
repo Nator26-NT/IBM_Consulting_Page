@@ -772,66 +772,7 @@ body {
     color: white;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .main-title {
-        font-size: 2.5rem;
-    }
-    
-    .subtitle {
-        font-size: 1.2rem;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
-    .services-grid,
-    .stats-grid,
-    .team-grid,
-    .testimonials-grid,
-    .projects-grid,
-    .executives-grid,
-    .advisors-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .project-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .project-value {
-        margin-top: 0.5rem;
-    }
-    
-    .admin-panel {
-        width: 100%;
-    }
-    
-    .admin-header {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .admin-actions {
-        width: 100%;
-        justify-content: space-between;
-    }
-    
-    .image-actions {
-        flex-direction: column;
-    }
-    
-    .member-avatar,
-    .advisor-avatar,
-    .executive-avatar {
-        width: 120px;
-        height: 120px;
-    }
-}
-/* Add these styles to your existing CSS file */
-
+/* Additional styles for image management */
 .image-note {
     font-size: 0.8rem;
     color: var(--ibm-gray);
@@ -941,4 +882,63 @@ body {
 
 .update-btn:hover {
     background: var(--ibm-light-blue);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .services-grid,
+    .stats-grid,
+    .team-grid,
+    .testimonials-grid,
+    .projects-grid,
+    .executives-grid,
+    .advisors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-value {
+        margin-top: 0.5rem;
+    }
+    
+    .admin-panel {
+        width: 100%;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .admin-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .image-actions {
+        flex-direction: column;
+    }
+    
+    .member-avatar,
+    .advisor-avatar,
+    .executive-avatar {
+        width: 120px;
+        height: 120px;
+    }
 }

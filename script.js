@@ -790,7 +790,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Statistics counter animation
+    // Statistics counter animation - FIXED VERSION (No NaN)
     const statNumbers = document.querySelectorAll('.stat-number');
     const statsSection = document.querySelector('.accomplishments');
     
@@ -798,16 +798,41 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 statNumbers.forEach(stat => {
-                    const target = parseInt(stat.textContent);
+                    const originalText = stat.textContent;
+                    
+                    // Skip animation for currency values to prevent NaN
+                    if (originalText.includes('$')) {
+                        // Don't animate currency values, just keep them as is
+                        return;
+                    }
+                    
+                    // Handle other number formats
+                    let target, suffix = '';
+                    
+                    if (originalText.includes('%')) {
+                        // Handle percentage format
+                        const numberPart = originalText.replace('%', '');
+                        target = parseInt(numberPart);
+                        suffix = '%';
+                    } else if (originalText.includes('+')) {
+                        // Handle format like "50+"
+                        const numberPart = originalText.replace('+', '');
+                        target = parseInt(numberPart);
+                        suffix = '+';
+                    } else {
+                        // Regular number
+                        target = parseInt(originalText);
+                    }
+                    
                     let current = 0;
                     const increment = target / 50;
                     const timer = setInterval(() => {
                         current += increment;
                         if (current >= target) {
-                            stat.textContent = target + stat.textContent.replace(target, '');
+                            stat.textContent = target + suffix;
                             clearInterval(timer);
                         } else {
-                            stat.textContent = Math.floor(current) + stat.textContent.replace(target, '');
+                            stat.textContent = Math.floor(current) + suffix;
                         }
                     }, 30);
                 });
