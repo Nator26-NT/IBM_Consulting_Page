@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deal Squad MEA - IBM Consulting</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Admin Login Modal -->
+    <div id="adminLoginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="adminLoginForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn-primary">Login</button>
+            </form>
+            <p class="login-note">Default: admin / admin124</p>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel">
+        <div class="admin-header">
+            <h3>Admin Panel</h3>
+            <div class="admin-actions">
+                <button id="resetAllContent" class="btn-warning">Reset All Content</button>
+                <button id="closeAdminPanel" class="btn-secondary">Close</button>
+            </div>
+        </div>
+        <div class="admin-content">
+            <div class="content-sections">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Admin Access Button -->
+        <div class="admin-access">
+            <button id="adminAccessBtn" class="btn-admin">
+                <i class="fas fa-cog"></i> Admin
+            </button>
+        </div>
+
+        <!-- Header Section -->
+        <header class="header" id="header-section">
+            <div class="container">
+                <h1 class="main-title" id="main-title">IBM Consulting</h1>
+                <p class="subtitle" id="header-subtitle">Driving Innovation and Excellence in Salesforce Solutions</p>
+            </div>
+        </header>
+
+        <!-- What We Do Section -->
+        <section class="section what-we-do" id="services-section">
+            <div class="container">
+                <h2 class="section-title" id="services-title">What We Do</h2>
+                <p class="section-subtitle" id="services-subtitle">Explore the creative ways we support storytelling, design and communication.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card" id="service-1">
+                        <div class="service-icon">
+                            <i class="fas fa-film" id="service-1-icon"></i>
+                        </div>
+                        <h3 id="service-1-title">Motion Design</h3>
+                        <p id="service-1-desc">Use animation to elevate storytelling and presentation effectiveness.</p>
+                    </div>
+                    
+                    <div class="service-card" id="service-2">
+                        <div class="service-icon">
+                            <i class="fas fa-video" id="service-2-icon"></i>
+                        </div>
+                        <h3 id="service-2-title">Videography</h3>
+                        <p id="service-2-desc">Compile and Video Editing content to amplify messaging and impact.</p>
+                    </div>
+                    
+                    <div class="service-card" id="service-3">
+                        <div class="service-icon">
+                            <i class="fas fa-book-open" id="service-3-icon"></i>
+                        </div>
+                        <h3 id="service-3-title">Storytelling</h3>
+                        <p id="service-3-desc">Craft compelling narratives that highlight client value and competitive edge.</p>
+                    </div>
+                    
+                    <div class="service-card" id="service-4">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop" id="service-4-icon"></i>
+                        </div>
+                        <h3 id="service-4-title">Presentation Design</h3>
+                        <p id="service-4-desc">Create impactful presentation layouts that elevate delivery and engagement.</p>
+                    </div>
+                    
+                    <div class="service-card" id="service-5">
+                        <div class="service-icon">
+                            <i class="fas fa-palette" id="service-5-icon"></i>
+                        </div>
+                        <h3 id="service-5-title">Visual Design</h3>
+                        <p id="service-5-desc">Turn stories into immersive visuals that reinforce key messages.</p>
+                    </div>
+                </div>
+                
+                <div class="work-with-us">
+                    <button class="btn-primary" id="work-with-us-btn">Work with us</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accomplishments Section -->
+        <section class="section accomplishments" id="accomplishments-section">
+            <div class="container">
+                <h2 class="section-title" id="accomplishments-title">Accomplishments</h2>
+                <p class="section-subtitle" id="accomplishments-subtitle">Here's a snapshot of the impactful work we have completed so far.</p>
+                
+                <div class="stats-grid">
+                    <div class="stat-card" id="stat-1">
+                        <div class="stat-number" id="stat-1-number">50+</div>
+                        <div class="stat-label" id="stat-1-label">Projects Completed</div>
+                    </div>
+                    <div class="stat-card" id="stat-2">
+                        <div class="stat-number" id="stat-2-number">$15M+</div>
+                        <div class="stat-label" id="stat-2-label">Deal Value Influenced</div>
+                    </div>
+                    <div class="stat-card" id="stat-3">
+                        <div class="stat-number" id="stat-3-number">92%</div>
+                        <div class="stat-label" id="stat-3-label">Client Satisfaction</div>
+                    </div>
+                    <div class="stat-card" id="stat-4">
+                        <div class="stat-number" id="stat-4-number">25%</div>
+                        <div class="stat-label" id="stat-4-label">Win Rate Improvement</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="section team" id="team-section">
+            <div class="container">
+                <h2 class="section-title" id="team-title">Who We Are</h2>
+                <p class="section-subtitle" id="team-subtitle">We are a cross-functional team of experts dedicated to supporting high-value, strategic deals across the MEA region. We aim to drive deal velocity, improve win rates and deliver tailored solutions that align with client needs and business goals.</p>
+                
+                <div class="team-grid">
+                    <div class="team-member" data-member-id="1">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Thami.png" alt="Thami Dweku" class="member-image">
+                            <span class="member-initial" style="display: none;">T</span>
+                        </div>
+                        <h3 id="member-1-name">Thami Dweku</h3>
+                        <p id="member-1-role">Strategic Visual Designer</p>
+                    </div>
+                    
+                    <div class="team-member" data-member-id="2">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Kamo.png" alt="Kamo Mohale" class="member-image">
+                            <span class="member-initial" style="display: none;">K</span>
+                        </div>
+                        <h3 id="member-2-name">Kamo Mohale</h3>
+                        <p id="member-2-role">Multimedia Designer</p>
+                    </div>
+                    
+                    <div class="team-member" data-member-id="3">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Sharon.png" alt="Sharon Banda" class="member-image">
+                            <span class="member-initial" style="display: none;">S</span>
+                        </div>
+                        <h3 id="member-3-name">Sharon Banda</h3>
+                        <p id="member-3-role">HR Graduate</p>
+                    </div>
+                    
+                    <div class="team-member" data-member-id="4">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Karin.png" alt="Karin Barnard" class="member-image">
+                            <span class="member-initial" style="display: none;">K</span>
+                        </div>
+                        <h3 id="member-4-name">Karin Barnard</h3>
+                        <p id="member-4-role">Project Manager</p>
+                    </div>
+                    
+                    <div class="team-member" data-member-id="5">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Majid.png" alt="Majid Khan" class="member-image">
+                            <span class="member-initial" style="display: none;">M</span>
+                        </div>
+                        <h3 id="member-5-name">Majid Khan</h3>
+                        <p id="member-5-role">Program Director</p>
+                    </div>
+                    
+                    <div class="team-member" data-member-id="6">
+                        <div class="member-avatar">
+                            <img src="Who%20We%20Are/Kevin.png" alt="Kevin Sookoo" class="member-image">
+                            <span class="member-initial" style="display: none;">K</span>
+                        </div>
+                        <h3 id="member-6-name">Kevin Sookoo</h3>
+                        <p id="member-6-role">Creative Director</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section testimonials" id="testimonials-section">
+            <div class="container">
+                <h2 class="section-title" id="testimonials-title">Client Testimonials</h2>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card" id="testimonial-1">
+                        <p class="testimonial-text" id="testimonial-1-text">Nossitem nimus cone pla diam, adis pligendiatem intio que qui con</p>
+                        <div class="testimonial-author">
+                            <strong id="testimonial-1-author">- Hassan El Amine</strong>
+                            <span id="testimonial-1-role">Design Director, iX</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" id="testimonial-2">
+                        <p class="testimonial-text" id="testimonial-2-text">Nossitem nimus cone pla diam, adis pligendiatem intio que qui con</p>
+                        <div class="testimonial-author">
+                            <strong id="testimonial-2-author">- Anel Strydom</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card" id="testimonial-3">
+                        <p class="testimonial-text" id="testimonial-3-text">Nossitem nimus cone pla diam, adis pligendiatem intio que qui con</p>
+                        <div class="testimonial-author">
+                            <strong id="testimonial-3-author">- Anel Strydom</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How We Work Section -->
+        <section class="section how-we-work" id="how-we-work-section">
+            <div class="container">
+                <h2 class="section-title" id="how-we-work-title">How We Work?</h2>
+                <h3 class="subsection-title" id="playbook-title">Our Playbook</h3>
+                
+                <div class="projects-grid">
+                    <div class="project-card" id="project-1">
+                        <div class="project-header">
+                            <h3 id="project-1-industry">Industry: Consulting</h3>
+                            <div class="project-value" id="project-1-value">$000</div>
+                        </div>
+                        <p><strong>Scope:</strong> <span id="project-1-scope">Presentation Design, Motion Design and Visual Design</span></p>
+                    </div>
+                    
+                    <div class="project-card" id="project-2">
+                        <div class="project-header">
+                            <h3 id="project-2-industry">Industry: Public Sector</h3>
+                            <div class="project-value" id="project-2-value">$000</div>
+                        </div>
+                        <p><strong>Scope:</strong> <span id="project-2-scope">Presentation Design and Visual Design</span></p>
+                    </div>
+                    
+                    <div class="project-card" id="project-3">
+                        <div class="project-header">
+                            <h3 id="project-3-industry">Industry: Aviation</h3>
+                            <div class="project-value" id="project-3-value">$000</div>
+                        </div>
+                        <p><strong>Scope:</strong> <span id="project-3-scope">Videography, Motion Design, Presentation Design and Visual Design</span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Executive Sponsors Section -->
+        <section class="section executives" id="executives-section">
+            <div class="container">
+                <h2 class="section-title" id="executives-title">Executive Sponsors</h2>
+                <p class="section-subtitle" id="executives-subtitle">Grateful for the support and trust of our executive sponsors.</p>
+                
+                <div class="executives-grid">
+                    <div class="executive-card" data-executive-id="1">
+                        <div class="executive-avatar">
+                            <img src="Executive%20Sposnors/Lula%20Mohanty.png" alt="Lula Mohanty" class="executive-image">
+                            <span class="executive-initial" style="display: none;">L</span>
+                        </div>
+                        <h3 id="executive-1-name">Lula Mohanty</h3>
+                        <p id="executive-1-role">Managing Partner, IBM Consulting</p>
+                        <p class="location" id="executive-1-location">Johannesburg, GP, South Africa</p>
+                    </div>
+                    
+                    <div class="executive-card" data-executive-id="2">
+                        <div class="executive-avatar">
+                            <img src="Executive%20Sposnors/Riaz%20Osman.png" alt="Riaz Osman" class="executive-image">
+                            <span class="executive-initial" style="display: none;">R</span>
+                        </div>
+                        <h3 id="executive-2-name">Riaz Osman</h3>
+                        <p id="executive-2-role">Senior Partner, IBM Consulting MEA, Business Operations Leader Consulting</p>
+                        <p class="location" id="executive-2-location">Johannesburg, GP, South Africa</p>
+                    </div>
+                    
+                    <div class="executive-card" data-executive-id="3">
+                        <div class="executive-avatar">
+                            <img src="Executive%20Sposnors/Khaled%20Alofaysan.png" alt="Khaled Alofaysan" class="executive-image">
+                            <span class="executive-initial" style="display: none;">K</span>
+                        </div>
+                        <h3 id="executive-3-name">Khaled Alofaysan</h3>
+                        <p id="executive-3-role">KSA Managing Partner IBM Consulting</p>
+                        <p class="location" id="executive-3-location">Riyadh, Saudi Arabia</p>
+                    </div>
+                    
+                    <div class="executive-card" data-executive-id="4">
+                        <div class="executive-avatar">
+                            <img src="Executive%20Sposnors/Tamer%20AbulAzm.png" alt="Tamer AbulAzm" class="executive-image">
+                            <span class="executive-initial" style="display: none;">T</span>
+                        </div>
+                        <h3 id="executive-4-name">Tamer AbulAzm</h3>
+                        <p id="executive-4-role">Managing Partner, IBM Consulting</p>
+                        <p class="location" id="executive-4-location">Giza, C, Egypt</p>
+                    </div>
+                    
+                    <div class="executive-card" data-executive-id="5">
+                        <div class="executive-avatar">
+                            <img src="Executive%20Sposnors/Sikhumbuzo%20Ngcobo.png" alt="Sikhumbuzo Ngcobo" class="executive-image">
+                            <span class="executive-initial" style="display: none;">S</span>
+                        </div>
+                        <h3 id="executive-5-name">Sikhumbuzo Ngcobo</h3>
+                        <p id="executive-5-role">Senior Partner, IBM Consulting MEA</p>
+                        <p class="location" id="executive-5-location">Dubai, DU, United Arab Emirates</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Advisors Section -->
+        <section class="section advisors" id="advisors-section">
+            <div class="container">
+                <h2 class="section-title" id="advisors-title">Program Advisors</h2>
+                <p class="section-subtitle" id="advisors-subtitle">A look at the team behind the scenes who challenge and champion us.</p>
+                
+                <div class="advisors-grid">
+                    <div class="advisor-card" data-advisor-id="1">
+                        <div class="advisor-avatar">
+                            <img src="Program%20Advisors/Thiemo%20Borchart.png" alt="Thiemo Borchart" class="advisor-image">
+                            <span class="advisor-initial" style="display: none;">T</span>
+                        </div>
+                        <h3 id="advisor-1-name">Thiemo Borchart</h3>
+                        <p id="advisor-1-role">Advisory Lead IBM iX Germany GmbH</p>
+                        <p class="location" id="advisor-1-location">Berlin, BE, Germany</p>
+                    </div>
+                    
+                    <div class="advisor-card" data-advisor-id="2">
+                        <div class="advisor-avatar">
+                            <img src="Program%20Advisors/Rober%20la%20Grange.png" alt="Rober la Grange" class="advisor-image">
+                            <span class="advisor-initial" style="display: none;">R</span>
+                        </div>
+                        <h3 id="advisor-2-name">Rober la Grange</h3>
+                        <p id="advisor-2-role">Design and Experience Coach IBM Consulting MEA</p>
+                        <p class="location" id="advisor-2-location">Johannesburg, GP, South Africa</p>
+                    </div>
+                    
+                    <div class="advisor-card" data-advisor-id="3">
+                        <div class="advisor-avatar">
+                            <img src="Program%20Advisors/Fabian%20Payer.png" alt="Fabian Payer" class="advisor-image">
+                            <span class="advisor-initial" style="display: none;">F</span>
+                        </div>
+                        <h3 id="advisor-3-name">Fabian Payer</h3>
+                        <p id="advisor-3-role">Client Partner IBM iX Germany GmbH</p>
+                        <p class="location" id="advisor-3-location">Berlin, BE, Germany</p>
+                    </div>
+                    
+                    <div class="advisor-card" data-advisor-id="4">
+                        <div class="advisor-avatar">
+                            <img src="Program%20Advisors/Warren%20Hunt.PNG" alt="Warren Hunt" class="advisor-image">
+                            <span class="advisor-initial" style="display: none;">W</span>
+                        </div>
+                        <h3 id="advisor-4-name">Warren Hunt</h3>
+                        <p id="advisor-4-role">Customer Transformation Chief Creative Officer IBM Consulting MEA</p>
+                        <p class="location" id="advisor-4-location">Johannesburg, GP, South Africa</p>
+                    </div>
+                    
+                    <div class="advisor-card" data-advisor-id="5">
+                        <div class="advisor-avatar">
+                            <img src="Program%20Advisors/Anel%20Strydom.png" alt="Anel Strydom" class="advisor-image">
+                            <span class="advisor-initial" style="display: none;">A</span>
+                        </div>
+                        <h3 id="advisor-5-name">Anel Strydom</h3>
+                        <p id="advisor-5-role">Strategy and Transformation Leader IBM Consulting MEA</p>
+                        <p class="location" id="advisor-5-location">Johannesburg, GP, South Africa</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact-section">
+            <div class="container">
+                <h2 class="section-title" id="contact-title">Need Our Services?</h2>
+                <div class="contact-cta">
+                    <button class="btn-primary btn-large" id="contact-button">Reach Out</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer" id="footer-section">
+            <div class="container">
+                <p id="footer-text">© Copyright IBM Corporation 2025. IBM, the IBM logo, and [other IBM trademark listed on the IBM Trademarks List] are trademarks or registered trademarks of IBM Corp., in the U.S. and/or other countries.</p>
+                <p class="africa" id="africa-text">Africa</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

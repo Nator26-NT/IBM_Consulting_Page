@@ -1,0 +1,944 @@
+/* IBM Color Scheme */
+:root {
+    --ibm-blue: #001D6C;
+    --ibm-light-blue: #4178BE;
+    --ibm-accent: #0062FF;
+    --ibm-background: #F4F4F4;
+    --ibm-text-dark: #001D6C;
+    --ibm-text-light: #FFFFFF;
+    --ibm-gray: #8C8C8C;
+    --ibm-light-gray: #E0E0E0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: white;
+    color: var(--ibm-text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Section */
+.header {
+    background: linear-gradient(135deg, var(--ibm-blue), var(--ibm-light-blue));
+    color: var(--ibm-text-light);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* Section Styling */
+.section {
+    padding: 80px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--ibm-blue);
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--ibm-gray);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--ibm-light-blue);
+}
+
+/* What We Do Section */
+.what-we-do {
+    background-color: var(--ibm-background);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    color: var(--ibm-blue);
+    margin-bottom: 1rem;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--ibm-blue);
+}
+
+.service-card p {
+    color: var(--ibm-gray);
+    line-height: 1.6;
+}
+
+.work-with-us {
+    text-align: center;
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--ibm-blue);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background: var(--ibm-light-blue);
+}
+
+.btn-secondary {
+    background: var(--ibm-gray);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-secondary:hover {
+    background: var(--ibm-light-blue);
+}
+
+.btn-warning {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-warning:hover {
+    background: #e68900;
+}
+
+.btn-admin {
+    background: var(--ibm-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.btn-admin:hover {
+    background: var(--ibm-light-blue);
+}
+
+.btn-large {
+    padding: 15px 40px;
+    font-size: 1.2rem;
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+}
+
+/* Accomplishments Section */
+.accomplishments {
+    background-color: white;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--ibm-background);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--ibm-blue);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--ibm-gray);
+    font-weight: 500;
+}
+
+/* Team Section */
+.team {
+    background-color: var(--ibm-background);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-3px);
+}
+
+.member-avatar {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, var(--ibm-blue), var(--ibm-light-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.member-initial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.team-member h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ibm-blue);
+}
+
+.team-member p {
+    color: var(--ibm-gray);
+}
+
+/* Testimonials Section */
+.testimonials {
+    background-color: white;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background: var(--ibm-background);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--ibm-blue);
+    transition: transform 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.5rem;
+    color: var(--ibm-gray);
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    border-top: 1px solid var(--ibm-light-gray);
+    padding-top: 1rem;
+}
+
+.testimonial-author strong {
+    color: var(--ibm-blue);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.testimonial-author span {
+    color: var(--ibm-gray);
+    font-size: 0.9rem;
+}
+
+/* How We Work Section */
+.how-we-work {
+    background-color: var(--ibm-background);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.project-header h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ibm-blue);
+}
+
+.project-value {
+    background: var(--ibm-blue);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.project-card p {
+    color: var(--ibm-gray);
+    line-height: 1.6;
+}
+
+/* Executives Section */
+.executives {
+    background-color: white;
+}
+
+.executives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.executive-card {
+    background: var(--ibm-background);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--ibm-blue);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.executive-card:hover {
+    transform: translateY(-3px);
+}
+
+.executive-avatar {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--ibm-blue), var(--ibm-light-blue));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.executive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.executive-initial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.executive-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ibm-blue);
+}
+
+.executive-card p {
+    color: var(--ibm-gray);
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    font-style: italic;
+    color: var(--ibm-light-blue) !important;
+}
+
+/* Advisors Section */
+.advisors {
+    background-color: var(--ibm-background);
+}
+
+.advisors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.advisor-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    border-left: 4px solid var(--ibm-light-blue);
+}
+
+.advisor-card:hover {
+    transform: translateY(-3px);
+}
+
+.advisor-avatar {
+    width: 140px;
+    height: 140px;
+    background: linear-gradient(135deg, var(--ibm-light-blue), var(--ibm-accent));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+}
+
+.advisor-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.advisor-initial {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.advisor-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--ibm-blue);
+}
+
+.advisor-card p {
+    color: var(--ibm-gray);
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact {
+    background: linear-gradient(135deg, var(--ibm-blue), var(--ibm-light-blue));
+    color: white;
+    text-align: center;
+}
+
+.contact .section-title {
+    color: white;
+}
+
+.contact-cta {
+    margin-top: 2rem;
+}
+
+/* Footer */
+.footer {
+    background: var(--ibm-blue);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer p {
+    margin-bottom: 1rem;
+}
+
+.africa {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+/* Admin Access */
+.admin-access {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close {
+    color: var(--ibm-gray);
+    float: right;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close:hover {
+    color: var(--ibm-blue);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--ibm-light-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.login-note {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--ibm-gray);
+}
+
+/* Admin Panel */
+.admin-panel {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 100%;
+    background: white;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.admin-header {
+    background: var(--ibm-blue);
+    color: white;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.admin-content {
+    padding: 1rem;
+}
+
+.content-section {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--ibm-light-gray);
+}
+
+.content-section h4 {
+    margin-bottom: 0.5rem;
+    color: var(--ibm-blue);
+}
+
+.content-section input,
+.content-section textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--ibm-light-gray);
+    border-radius: 4px;
+}
+
+.content-section textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.update-btn {
+    background: var(--ibm-blue);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-right: 8px;
+}
+
+.update-btn:hover {
+    background: var(--ibm-light-blue);
+}
+
+.image-management {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--ibm-light-gray);
+}
+
+.image-preview {
+    max-width: 100px;
+    max-height: 100px;
+    border-radius: 50%;
+    margin: 10px 0;
+    border: 2px solid var(--ibm-light-gray);
+}
+
+.image-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.icon-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.icon-option {
+    padding: 5px;
+    border: 1px solid var(--ibm-light-gray);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.icon-option:hover {
+    background: var(--ibm-background);
+}
+
+.icon-option.selected {
+    background: var(--ibm-blue);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .services-grid,
+    .stats-grid,
+    .team-grid,
+    .testimonials-grid,
+    .projects-grid,
+    .executives-grid,
+    .advisors-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .project-value {
+        margin-top: 0.5rem;
+    }
+    
+    .admin-panel {
+        width: 100%;
+    }
+    
+    .admin-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .admin-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .image-actions {
+        flex-direction: column;
+    }
+    
+    .member-avatar,
+    .advisor-avatar,
+    .executive-avatar {
+        width: 120px;
+        height: 120px;
+    }
+}
+/* Add these styles to your existing CSS file */
+
+.image-note {
+    font-size: 0.8rem;
+    color: var(--ibm-gray);
+    margin-top: 5px;
+    font-style: italic;
+}
+
+.image-preview-container {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.image-preview {
+    max-width: 120px;
+    max-height: 120px;
+    border-radius: 50%;
+    border: 3px solid var(--ibm-light-blue);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.image-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.image-actions .update-btn {
+    background: var(--ibm-blue);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.image-actions .btn-danger {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.image-actions input[type="file"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid var(--ibm-light-gray);
+    border-radius: 4px;
+}
+
+/* Ensure all editing tools are visible */
+.content-section {
+    background: white;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--ibm-light-blue);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.content-section h4 {
+    color: var(--ibm-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--ibm-light-gray);
+}
+
+.content-section label {
+    font-weight: 600;
+    color: var(--ibm-text-dark);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.content-section input,
+.content-section textarea {
+    border: 1px solid var(--ibm-light-gray);
+    border-radius: 4px;
+    padding: 8px;
+    margin-bottom: 1rem;
+    width: 100%;
+    transition: border-color 0.3s;
+}
+
+.content-section input:focus,
+.content-section textarea:focus {
+    border-color: var(--ibm-blue);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0,29,108,0.1);
+}
+
+.update-btn {
+    background: var(--ibm-blue);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+}
+
+.update-btn:hover {
+    background: var(--ibm-light-blue);
+}
